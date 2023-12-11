@@ -1,0 +1,182 @@
+:root {
+    /*
+    https: //coolors.co/2c6e49-4c956c-fefee3-ffc9b9-d68c45
+    */
+    --primary-color: #2C6E49;
+    --secondary-color: #4C956C;
+    --secondary-color-brighten: #56A87A;
+    --secondary-color-darken: #41805C;
+    --accent-color: #D68C45;
+    --foreground-color: #ffffff;
+    --background-color: #f4f2ee;
+}
+
+/* Layout Styles*/
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.spacer {
+    height: 24px;
+}
+
+/* Section Styles*/
+.sections-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 40px;
+    justify-content: space-evenly;
+}
+
+section {
+    width: 40%;
+    min-width: 420px;
+    height: fit-content;
+    border-radius: 16px;
+    padding: 12px;
+    background-color: var(--foreground-color);
+}
+
+section h2 {
+    margin: 16px;
+}
+
+section div {
+    display: flex;
+}
+
+section img {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    object-fit: cover;
+    /* Optional: Add a subtle box shadow */
+}
+
+section p {
+    width: 50%;
+    margin: 16px;
+    /* Optional: Add a subtle box shadow */
+}
+
+/* Text Styles */
+h1 {
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fefefe;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #101010;
+    text-align: center;
+}
+
+p {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202020
+}
+
+a {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+    display: inline;
+    /*HACK Needed as block doesn't work with position: sticky*/
+}
+
+nav ul {
+    position: sticky;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: var(--secondary-color);
+}
+
+nav ul li {
+    float: left;
+    border-right: 1px solid var(--background-color);
+}
+
+nav ul li:last-child {
+    float: right;
+    border-right: none;
+    border-left: 1px solid var(--background-color);
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color-brighten);
+}
+
+nav ul li a:active {
+    background-color: var(--primary-color);
+}
+
+/*
+table {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 20px;
+}
+
+tr {
+    background-color: #f2f200;
+}
+
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}*/
+
+
+/* Reactive Styles*/
+@media screen and (max-width: 600px) {
+    nav ul {
+        position: static;
+    }
+
+    nav ul li,
+    nav ul li:last-child {
+        float: none;
+    }
+
+    .spacer {
+        height: 4px;
+    }
+}
